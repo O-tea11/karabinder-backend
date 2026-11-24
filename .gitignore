@@ -1,0 +1,28 @@
+# 環境変数（秘匿情報。絶対にコミットしない）
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ツールのキャッシュ
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# 大きいバイナリ（モデルキャッシュ・音声・画像）
+models/
+*.pkl
+*.wav
+*.m4a
