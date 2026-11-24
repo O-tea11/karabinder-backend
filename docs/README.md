@@ -6,6 +6,7 @@
 | No. | ドキュメント | 内容 |
 |---|---|---|
 | 01 | [FastAPI まとめ](./01-fastapi.md) | バックエンドフレームワークの選定理由、Starlette / Pydantic / ASGI、依存性注入、async の使い分け |
+| 02 | [初期構成の設計](./02-project-structure.md) | ディレクトリ構成、各層の責務、ツール選定（uv / Ruff / mypy / Docker）、Phase 分け |
 
 ## 進め方
 
