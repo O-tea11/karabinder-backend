@@ -323,13 +323,24 @@ FastAPI 単体の理解を固めてから DB を足します。問題が起き�
 
 ---
 
-## 10. 確認したい決定事項
+## 10. 決定事項（2026-11-24 合意）
 
-実装に入る前に決めたい点です。
+| 項目 | 決定 | 根拠 |
+|---|---|---|
+| パッケージ管理 | **uv** | Python 本体のバージョン管理まで 1 つで済み、Windows で pyenv が不要（§5.1） |
+| ローカル DB | **Docker Compose で PostgreSQL（pgvector イメージ）** | 本番と同じ環境で Alembic を学べ、pgvector / JSONB が最初から使える（§7 案1） |
+| Python バージョン | **3.13** | YomiToku が `<3.14` を要求（§6） |
+| ディレクトリ構成 | **レイヤー別** | テーブル数が小規模で、model と schema の役割の違いが構成から見える（§2） |
+| 実装の順番 | **Phase 1 から順に** | FastAPI 単体を動かしてから DB を足す（§8） |
 
-1. **パッケージ管理は uv でよいか**（Windows でも `winget install astral-sh.uv` などで導入可）
-2. **ローカル DB は Docker で PostgreSQL を立てるか**（Docker Desktop が使えるか）
-3. **Phase 1 から順に実装していくか**、それとも先に SQLAlchemy のまとめドキュメントを読むか
+### 事前に必要なもの（ローカル環境）
+
+```powershell
+winget install --id astral-sh.uv       # uv の導入
+winget install --id Docker.DockerDesktop   # Docker Desktop の導入（未導入の場合）
+```
+
+導入後、`uv --version` と `docker --version` が応答すれば準備完了です。
 
 ---
 
